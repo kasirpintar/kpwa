@@ -116,7 +116,7 @@ class Client extends EventEmitter {
 
         this.pupBrowser = browser;
         this.pupPage = page;
-
+        await this.pupPage.emulateTimezone("Asia/Jakarta");
         await this.authStrategy.afterBrowserInitialized();
         await this.initWebVersionCache();
 
