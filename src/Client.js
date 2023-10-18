@@ -692,14 +692,14 @@ class Client extends EventEmitter {
         this.authStrategy.afterAuthReady();
 
         // Disconnect when navigating away when in PAIRING state (detect logout)
-        this.pupPage.on('framenavigated', async () => {
-            const appState = await this.getState();
-            if(!appState || appState === WAState.PAIRING) {
-                await this.authStrategy.disconnect();
-                this.emit(Events.DISCONNECTED, 'NAVIGATION');
-                await this.destroy();
-            }
-        });
+        // this.pupPage.on('framenavigated', async () => {
+        //     const appState = await this.getState();
+        //     if(!appState || appState === WAState.PAIRING) {
+        //         await this.authStrategy.disconnect();
+        //         this.emit(Events.DISCONNECTED, 'NAVIGATION');
+        //         await this.destroy();
+        //     }
+        // });
     }
 
     async initWebVersionCache() {
