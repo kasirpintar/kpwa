@@ -179,8 +179,7 @@ class Client extends EventEmitter {
                 PROGRESS_MESSAGE: '//*[@id=\'app\']/div/div/div[3]',
             }
         );
-
-        const INTRO_IMG_SELECTOR = '[data-icon=\'search\']';
+        const INTRO_IMG_SELECTOR = ['[data-icon*=community]', '[data-icon*=status]', '[data-icon*=chat]'];
         const INTRO_QRCODE_SELECTOR = 'div[data-ref] canvas';
 
         // Checks which selector appears first
